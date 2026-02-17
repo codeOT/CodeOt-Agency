@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #090805;
+  --color-text: #e8dfd0;
+  --color-gold: #c9a84c;
+  --color-gold-hover: #b8912b;
+  --color-gold-shimmer: #e8c97a;
+  --color-gold-light: #fff5d6;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+/* ── Scrollbar ─────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-gold); }
+
+/* ── Selection ─────────────────────────── */
+::selection {
+  background: rgba(201, 168, 76, 0.2);
+  color: var(--color-gold-shimmer);
+}
+
+/* ── Inputs ────────────────────────────── */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(232, 223, 208, 0.22);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(201, 168, 76, 0.5) !important;
+}
+
+select option {
+  background: #1c170e;
+  color: var(--color-text);
+}
+
+/* ── Keyframes ─────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(201,168,76,0.55); }
+  50%       { box-shadow: 0 0 0 7px rgba(201,168,76,0); }
+}
+
+/* ── Shimmer text ──────────────────────── */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #b8922e 0%, #e8c97a 30%, #fff5d6 50%, #e8c97a 70%, #b8922e 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* ── Nav link underline ────────────────── */
+.nav-link-u {
+  position: relative;
+}
+.nav-link-u::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link-u:hover::after { transform: scaleX(1); }
+.nav-link-u:hover { color: rgba(232,223,208,0.88) !important; }
+
+/* ── Cards / buttons ───────────────────── */
+.svc-card {
+  transition: border-color 0.3s, background 0.3s;
+}
+.svc-card:hover {
+  border-color: rgba(201,168,76,0.32) !important;
+  background: rgba(201,168,76,0.04) !important;
+}
+
+.btn-gold {
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.btn-gold:hover {
+  background: var(--color-gold-hover) !important;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.4) !important;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  transition: border-color 0.25s, color 0.25s;
+}
+.btn-ghost:hover {
+  border-color: rgba(201,168,76,0.55) !important;
+  color: var(--color-gold-shimmer) !important;
+}
+
+.submit-btn {
+  transition: background 0.25s, box-shadow 0.25s, color 0.25s;
+}
+.submit-btn:hover {
+  background: var(--color-gold-hover) !important;
+}
+
+/* ── Logo diamond ──────────────────────── */
+.logo-diamond {
+  transition: transform 0.5s ease;
+}
+a:hover .logo-diamond {
+  transform: rotate(135deg);
+}
