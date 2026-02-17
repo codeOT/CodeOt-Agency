@@ -10,7 +10,7 @@ import {
   AboutSection,
   ContactSection,
   Footer,
-} from "@/components/index";
+} from "@/components/Index";
 
 export default function CodeOTLanding() {
   return (
