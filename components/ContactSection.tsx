@@ -97,7 +97,7 @@ export function ContactSection() {
               <div className="grid grid-cols-2 gap-4">
                 {(["name", "email"] as const).map((key) => (
                   <div key={key} className="flex flex-col gap-2">
-                    <label className="text-[10px] tracking-[0.12em] uppercase text-[rgba(201,168,76,0.52)] font-normal">
+                    <label className="text-[10px] tracking-[0.12em] uppercase font-normal">
                       {key === "name" ? "Full Name" : "Email Address"}
                     </label>
                     <input
@@ -119,7 +119,7 @@ export function ContactSection() {
 
               {/* Budget */}
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] tracking-[0.12em] uppercase text-[rgba(201,168,76,0.52)] font-normal">
+                <label className="text-[10px] tracking-[0.12em] uppercase  font-normal">
                   Project Budget
                 </label>
                 <select
@@ -146,7 +146,7 @@ export function ContactSection() {
 
               {/* Project brief */}
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] tracking-[0.12em] uppercase text-[rgba(201,168,76,0.52)] font-normal">
+                <label className="text-[10px] tracking-[0.12em] uppercase  font-normal">
                   Project Brief
                 </label>
                 <textarea

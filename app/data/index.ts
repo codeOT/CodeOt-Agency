@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
     category: "Web Design & Dev",
     year: "2025",
     description: "Energizing the Future: Cardinal Energies' Dynamic Web Presence for Renewable Energy Solutions.",
-    url: "https://cardinal-energies.com",
+    url: "https://cardinalenergies.org",
   },
   {
     title: "Cardinal Torch Company Limited Online Database Dashboard",
@@ -119,8 +119,8 @@ export const CONTACT_INFO: ContactInfo[] = [
 ];
 
 export const BUDGET_OPTIONS: string[] = [
-  "$300 – $2000",
-  "$10,000 – $25,000",
-  "$25,000 – $50,000",
-  "$50,000+",
+  "$150 – $1000",
+  "$1,100 – $2,000",
+  "$2,100 – $10,000",
+  "$10,000+",
 ];
